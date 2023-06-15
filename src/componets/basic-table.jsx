@@ -3,9 +3,9 @@ import React, { useEffect, useState } from 'react';
 
 function convertDataToExpect(data) {
   const result = {
-    method_name: 'getJobInfo(com.tmax.proobject.model.dataobject.DataObject arg0)',
-    class_name: 'com.tmax.jo.SHJO',
-    class_type: 'JOB_OBJECT',
+    method_name: 'getJobInfo(com.tmax.proobject.model.dataobject.DataObject arg0)', // from props
+    class_name: 'com.tmax.jo.SHJO', // from props
+    class_type: 'JOB_OBJECT', // from props
     subRows: [],
   };
   const map = new Map();
