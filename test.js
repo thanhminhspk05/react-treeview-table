@@ -65,91 +65,51 @@ const data = [
   },
 ];
 
-// const expect = [
-//   {
-//     method_name: 'Parent_method',
-//     class_name: 'Parent_class',
-//     class_type: 'JOB_OBJECT',
-//     sub_row: [
-//       { method_name: 'setApplicationName.11', class_name: 'com.tmax.11', class_type: 'DATA_OBJECT', sub_row: [] },
-//       {
-//         method_name: 'setApplicationName.12',
-//         class_name: 'com.tmax.12',
-//         class_type: 'JOB_OBJECT',
-//         sub_row: [
-//           {
-//             method_name: 'setApplicationName.121',
-//             class_name: 'com.tmax.121',
-//             class_type: 'JOB_OBJECT',
-//             sub_row: [],
-//           },
-//           {
-//             method_name: 'setApplicationName.122',
-//             class_name: 'com.tmax.122',
-//             class_type: 'JOB_OBJECT',
-//             sub_row: [],
-//           },
-//           {
-//             method_name: 'setApplicationName.123',
-//             class_name: 'com.tmax.123',
-//             class_type: 'JOB_OBJECT',
-//             sub_row: [
-//               {
-//                 method_name: 'setApplicationName.1231',
-//                 class_name: 'com.tmax.1231',
-//                 class_type: 'JOB_OBJECT',
-//                 sub_row: [],
-//               },
-//               {
-//                 method_name: 'setApplicationName.1232',
-//                 class_name: 'com.tmax.1232',
-//                 class_type: 'JOB_OBJECT',
-//                 sub_row: [],
-//               },
-//             ],
-//           },
-//         ],
-//       },
-//     ],
-//   },
-// ];
-
-function convertDataToExpect(data) {
-  const result = {
+const expect = [
+  {
     method_name: 'Parent_method',
     class_name: 'Parent_class',
     class_type: 'JOB_OBJECT',
-    sub_row: [],
-  };
-  const map = new Map();
-  data.forEach((item) => {
-    const { callDepth, callee_class, callee_method, callee_type, caller_class } = item;
-    if (callDepth === 1) {
-      const obj = {
-        method_name: callee_method,
-        class_name: callee_class,
-        class_type: callee_type,
-        sub_row: [],
-      };
-      result.sub_row.push(obj);
-      map.set(callee_class, obj.sub_row);
-    } else {
-      const sub_row = map.get(caller_class);
-      if (sub_row) {
-        const obj = {
-          method_name: callee_method,
-          class_name: callee_class,
-          class_type: callee_type,
-          sub_row: [],
-        };
-        sub_row.push(obj);
-        map.set(callee_class, obj.sub_row);
-      }
-    }
-  });
-  return [result];
-}
-
-const expect = convertDataToExpect(data);
-
-console.log(expect);
+    sub_row: [
+      { method_name: 'setApplicationName.11', class_name: 'com.tmax.11', class_type: 'DATA_OBJECT', sub_row: [] },
+      {
+        method_name: 'setApplicationName.12',
+        class_name: 'com.tmax.12',
+        class_type: 'JOB_OBJECT',
+        sub_row: [
+          {
+            method_name: 'setApplicationName.121',
+            class_name: 'com.tmax.121',
+            class_type: 'JOB_OBJECT',
+            sub_row: [],
+          },
+          {
+            method_name: 'setApplicationName.122',
+            class_name: 'com.tmax.122',
+            class_type: 'JOB_OBJECT',
+            sub_row: [],
+          },
+          {
+            method_name: 'setApplicationName.123',
+            class_name: 'com.tmax.123',
+            class_type: 'JOB_OBJECT',
+            sub_row: [
+              {
+                method_name: 'setApplicationName.1231',
+                class_name: 'com.tmax.1231',
+                class_type: 'JOB_OBJECT',
+                sub_row: [],
+              },
+              {
+                method_name: 'setApplicationName.1232',
+                class_name: 'com.tmax.1232',
+                class_type: 'JOB_OBJECT',
+                sub_row: [],
+              },
+            ],
+          },
+        ],
+      },
+    ],
+  },
+];
