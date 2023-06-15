@@ -3,9 +3,9 @@ const data = [
     callDepth: '1',
     callee_class: 'com.tmax.1',
     callee_method: 'setApplicationName.1',
-    callee_type: 'DATA_OBJECT',
-    caller_class: 'Parent_class',
-    caller_method: 'Parent_method',
+    callee_type: 'OBJ_OBJECT',
+    caller_class: 'com.tmax.jo.SHJO',
+    caller_method: 'getJobInfo(com.tmax.proobject.model.dataobject.DataObject arg0)',
   },
   {
     callDepth: '2',
@@ -124,10 +124,10 @@ const expect = [
 
 function convertDataToExpect(data) {
   const result = {
-    method_name: 'getJobInfo(com.tmax.proobject.model.dataobject.DataObject arg0)',
-    class_name: 'com.tmax.jo.SHJO',
-    class_type: '	JOB_OBJECT',
-    sub_row: [],
+    method_name: 'getJobInfo(com.tmax.proobject.model.dataobject.DataObject arg0)', // from props
+    class_name: 'com.tmax.jo.SHJO', // from props
+    class_type: 'JOB_OBJECT', // from props
+    subRows: [],
   };
   const map = new Map();
   data.forEach((item) => {
