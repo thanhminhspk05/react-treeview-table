@@ -1,0 +1,21 @@
+[
+  {
+    "method_name": "service(java.lang.Object arg0)",
+    "class_name": "com.tmax.so.SHSO",
+    "class_type": "BIZ_OBJECT",
+    "subRows": [
+      {
+        "method_name": "TEST()",
+        "class_name": "com.tmax.bo.SHBO",
+        "class_type": "BIZ_OBJECT",
+        "subRows": [
+          {
+            "method_name": "setFullQuery(com.tmax.dof.SHDOF.FULLQUERY arg0)",
+            "class_name": "com.tmax.dof.SHDOF",
+            "class_type": "DATA_OBJECT_FACTORY"
+          }
+        ]
+      }
+    ]
+  }
+]
